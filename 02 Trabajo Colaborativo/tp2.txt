@@ -1,0 +1,126 @@
+TP-2
+Gomez Armoa, Marcelo
+
+1) Contestar las siguientes preguntas utilizando las guías y documentación proporcionada
+(Desarrollar las respuestas):
+• ¿Qué es GitHub?
+Es una plataforma para alojar y colaboar proyector de desarrollo utilizando Git
+• ¿Cómo crear un repositorio en GitHub?
+En GitHub, en el botón “New” en la pag de repositorios y completar los requerimientos como nombre o si es publico o privado, luego presionar “créate repository”.
+• ¿Cómo crear una rama en Git?
+usar el comando “git branch nombre-rama”.
+• ¿Cómo cambiar a una rama en Git?
+usar comando “git checkout nombre-rama”
+• ¿Cómo fusionar ramas en Git?
+cambiar a la rama de destino con “git checkout” y fusionar con “git merge nombre-rama”.
+• ¿Cómo crear un commit en Git?
+añade los cambios con “git add .” luego crea un commit con “git commit -m ‘mensaje’ ”
+• ¿Cómo enviar un commit a GitHub?
+Usa el comando: “git push”
+• ¿Qué es un repositorio remoto?
+es una copia de tu repo alojado en un servidor externo como GitHub.
+• ¿Cómo agregar un repositorio remoto a Git?
+usar comando “git remote add origin URL-repo”
+• ¿Cómo empujar cambios a un repositorio remoto?
+usar comando “git push origin rama”
+• ¿Cómo tirar de cambios de un repositorio remoto?
+ usar comando “git pull”
+• ¿Qué es un fork de repositorio?
+es una copia de un repositorio en tu cuenta de GitHub para trabajar de forma independiente.
+• ¿Cómo crear un fork de un repositorio?
+en GitHub haz click en el botón “Fork” en el repo que deseas copias.
+• ¿Cómo enviar una solicitud de extracción (pull request) a un repositorio?
+Ir al repositorio en GitHub, selecciona tu rama y haz clic en "Pull Request"
+• ¿Cómo aceptar una solicitud de extracción?
+Ve a la pestaña "Pull Requests", selecciona la solicitud y haz clic en "Merge Pull Request".
+• ¿Qué es un etiqueta en Git?
+Es una referencia que apunta a un commit específico, usada generalmente para marcar versiones.
+• ¿Cómo crear una etiqueta en Git?
+Usa: git tag -a v1.0 -m "versión 1.0".
+• ¿Cómo enviar una etiqueta a GitHub?
+Usa: git push origin v1.0.
+• ¿Qué es un historial de Git?
+Es el registro de todos los cambios realizados en tu repositorio.
+• ¿Cómo ver el historial de Git?
+usar comando “git log”
+• ¿Cómo buscar en el historial de Git?
+Usa: git log --grep="término".
+• ¿Cómo borrar el historial de Git?
+En general, no se recomienda borrar el historial, pero puedes reescribirlo con git rebase o git filter-branch.
+• ¿Qué es un repositorio privado en GitHub?
+es un repo que solo los colaboradores tienen acceso
+• ¿Cómo crear un repositorio privado en GitHub?
+hay que seleccionar, cuando creamos el repo la opción de “Private”
+• ¿Cómo invitar a alguien a un repositorio privado en GitHub?
+Ve a "Settings > Collaborators", escribe el nombre del usuario y envía la invitación.
+• ¿Qué es un repositorio público en GitHub?
+Es un repositorio al que cualquier persona puede acceder para verlo o clonarlo.
+• ¿Cómo crear un repositorio público en GitHub?
+• ¿Cómo compartir un repositorio público en GitHub?
+
+2) Realizar la siguiente actividad:
+• Crear un repositorio.
+o Dale un nombre al repositorio.
+o Elije el repositorio sea público.
+o Inicializa el repositorio con un archivo.
+• Agregando un Archivo
+o Crea un archivo simple, por ejemplo, "mi-archivo.txt".
+o Realiza los comandos git add . y git commit -m "Agregando mi-archivo.txt" en la línea de comandos.
+o Sube los cambios al repositorio en GitHub con git push origin main (o el nombre de la rama correspondiente)
+• Creando Branchs
+o Crear una Branch
+o Realizar cambios o agregar un archivo
+o Subir la Branch
+https://github.com/Marcelo-GomezArmoa/tp-2
+3) Realizar la siguiente actividad:
+Paso 1: Crear un repositorio en GitHub
+• Ve a GitHub e inicia sesión en tu cuenta.
+• Haz clic en el botón "New" o "Create repository" para crear un nuevo repositorio.
+• Asigna un nombre al repositorio, por ejemplo, conflict-exercise.
+• Opcionalmente, añade una descripción.
+• Marca la opción "Initialize this repository with a README".
+• Haz clic en "Create repository".
+Paso 2: Clonar el repositorio a tu máquina local
+• Copia la URL del repositorio (usualmente algo como https://github.com/tuusuario/conflict-exercise.git).
+• Abre la terminal o línea de comandos en tu máquina.
+• Clona el repositorio usando el comando:
+git clone https://github.com/tuusuario/conflict-exercise.git
+• Entra en el directorio del repositorio: cd conflict-exercise
+Paso 3: Crear una nueva rama y editar un archivo
+• Crea una nueva rama llamada feature-branch: git checkout -b feature-branch
+• Abre el archivo README.md en un editor de texto y añade una línea nueva, por ejemplo:
+Este es un cambio en la feature branch.
+• Guarda los cambios y haz un commit:
+git add README.md
+git commit -m "Added a line in feature-branch"
+Paso 4: Volver a la rama principal y editar el mismo archivo
+• Cambia de vuelta a la rama principal (main):
+git checkout main
+• Edita el archivo README.md de nuevo, añadiendo una línea diferente:
+Este es un cambio en la main branch.
+• Guarda los cambios y haz un commit:
+git add README.md 
+git commit -m "Added a line in main branch"
+Paso 5: Hacer un merge y generar un conflicto
+• Intenta hacer un merge de la feature-branch en la rama main: git merge feature-branch
+• Se generará un conflicto porque ambos cambios afectan la misma línea del archivo README.md.
+Paso 6: Resolver el conflicto
+• Abre el archivo README.md en tu editor de texto. Verás algo similar a esto:
+<<<<<<< HEAD
+Este es un cambio en la main branch.
+=======
+Este es un cambio en la feature branch.
+>>>>>>> feature-branch
+• Decide cómo resolver el conflicto. Puedes mantener ambos cambios, elegir uno de ellos, o fusionar los contenidos de alguna manera.
+• Edita el archivo para resolver el conflicto y guarda los cambios (Se debe borrar lo marcado en verde en el archivo donde estes solucionando el conflicto. Y se debe borrar la parte del texto que no se quiera dejar).
+• Añade el archivo resuelto y completa el merge:
+git add README.md 
+git commit -m "Resolved merge conflict"
+Paso 7: Subir los cambios a GitHub
+• Sube los cambios de la rama main al repositorio remoto en GitHub: git push origin main
+• También sube la feature-branch si deseas: git push origin feature-branch
+Paso 8: Verificar en GitHub
+• Ve a tu repositorio en GitHub y revisa el archivo README.md para confirmar que los cambios se han subido correctamente.
+• Puedes revisar el historial de commits para ver el conflicto y su resolución.
+
+https://github.com/Marcelo-GomezArmoa
