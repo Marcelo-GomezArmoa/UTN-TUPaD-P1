@@ -211,3 +211,18 @@ else:
 
 print("La estación es:", estacion)
 #--------------------------------------------------------------------------------------------------
+edad = input ("ingrese su edad en años")
+edad = int(edad)
+
+if edad <0:
+    print ("no es posible ingresar una edad a 0")
+elif edad >65:
+    print("es mayor a 65")
+elif edad >18:
+    print("es mayor a 18")
+else:
+    print ("es menor a 18")
+
+
+
+#--------------------------------------------------------------------------------------------------
